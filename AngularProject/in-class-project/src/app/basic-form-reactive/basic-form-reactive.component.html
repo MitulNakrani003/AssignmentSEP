@@ -1,0 +1,25 @@
+<h3>Welcome, {{userName.value}}</h3>
+<div>
+    <div class="field">
+        <label>USERNAME: </label>
+        <input type="text" [formControl]="userName">
+    </div>
+    <div class="field">
+        <label>EMAIL: </label>
+        <input type="text" [formControl]="email">
+    </div>
+    <div class="field">
+        <label>DATE OF BIRTH: </label>
+        <input type="date" [formControl]="dob">
+    </div>
+    <div class="field">
+        <button (click)="saveFields()" [disabled]="!userName.value && !email.value && !dob.value">SUBMIT</button>&nbsp;
+        <button (click)="clearFields()" [disabled]="!userName.value && !email.value && !dob.value">CLEAR</button>
+    </div>
+    <div class="field">
+        <label>Submit Button Count: {{clickCount}}</label>
+    </div>
+    <div class="field" [hidden]="!saved">
+        Hi My Name if {{userName.value}}. My Date of Birth is {{dob.value}}. You can connect with me at {{email.value}}.
+    </div>
+</div>
