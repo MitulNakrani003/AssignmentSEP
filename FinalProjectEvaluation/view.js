@@ -10,6 +10,8 @@ const View = {
     snakeFinalScore: document.getElementById('snake-final-score'),
     snakePopupCloseBtn: document.getElementById('snake-popup-close-btn'),
 
+    pauseButton: document.getElementById('pause-btn'),
+
     updateScore(score) {
         this.scoreValue.textContent = score;
     },
@@ -84,6 +86,14 @@ const View = {
     setButtonStop() {
         this.toggleBtn.textContent = 'Stop Game';
         this.toggleBtn.classList.add('running');
+    },
+
+    setPause(){
+        this.pauseButton.textContent = 'Pause';
+    },
+
+    setResume(){
+        this.pauseButton.textContent = 'Resume';
     },
 
     showPopup(score) {

@@ -58,6 +58,18 @@ body {
     background-color: #4a90d9;
 }
 
+#pause-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #58e04b;
+}
+
 #toggle-btn:hover {
     background-color: #357abd;
 }

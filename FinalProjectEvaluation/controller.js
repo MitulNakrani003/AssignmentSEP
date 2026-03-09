@@ -1,7 +1,7 @@
 const Controller = {
-    moleTimer: null, 
+    moleTimer: null,
     countdownTimer: null,
-    snakeTimer: null,   
+    snakeTimer: null,
 
     init() {
         View.toggleBtn.addEventListener('click', () => {
@@ -9,6 +9,35 @@ const Controller = {
                 this.stopGame();
             } else {
                 this.startGame();
+            }
+        });
+
+        View.pauseButton.addEventListener('click', () => {
+            if (!Model.isRunning) {
+                return
+            }
+            if (Model.isPaused) {
+                Model.isPaused = false
+                View.setPause()
+
+                this.moleTimer = setInterval(() => this.spawnOneMole(), 1000);
+                this.snakeTimer = setInterval(() => this.spawnSnake(), 2000);
+                this.countdownTimer = setInterval(() => {
+                    Model.timeLeft -= 1;
+                    View.updateTimer(Model.timeLeft);
+
+                    if (Model.timeLeft <= 0) {
+                        this.endGame();
+                    }
+                }, 1000);
+
+            } else {
+                Model.isPaused = true
+                View.setResume()
+
+                clearInterval(this.moleTimer);
+                clearInterval(this.countdownTimer);
+                clearInterval(this.snakeTimer);
             }
         });
 
@@ -92,7 +121,7 @@ const Controller = {
     },
 
     handleWhack(index) {
-        if (!Model.isRunning) return;
+        if (!Model.isRunning || Model.isPaused) return;
         if (Model.board[index].hasSnake) {
             this.snakeGameOver();
             return;

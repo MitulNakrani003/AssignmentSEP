@@ -9,6 +9,8 @@ const Model = {
     board: [],
     snakeIndex: null,
 
+    isPaused: false,
+
     initBoard() {
         this.board = [];
         for (let i = 0; i < this.totalBlocks; i++) {
@@ -22,6 +24,7 @@ const Model = {
         this.timeLeft = this.totalTime;
         this.isRunning = false;
         this.snakeIndex = null;
+        this.isPaused = false
         this.initBoard();
     },
 

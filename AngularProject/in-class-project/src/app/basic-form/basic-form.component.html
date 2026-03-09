@@ -1,0 +1,25 @@
+<h3>Welcome, {{userName}}</h3>
+<div>
+    <div class="field">
+        <label>USERNAME: </label>
+        <input type="text" [(ngModel)]="userName">
+    </div>
+    <div class="field">
+        <label>EMAIL: </label>
+        <input type="text" [(ngModel)]="email">
+    </div>
+    <div class="field">
+        <label>DATE OF BIRTH: </label>
+        <input type="date" [(ngModel)]="dob">
+    </div>
+    <div class="field">
+        <button (click)="saveFields()" [disabled]="!userName && !email && !dob">SUBMIT</button>&nbsp;
+        <button (click)="clearFields()" [disabled]="!userName && !email && !dob">CLEAR</button>
+    </div>
+    <div class="field">
+        <label>Submit Button Count: {{clickCount}}</label>
+    </div>
+    <div class="field" [hidden]="!saved">
+        Hi My Name if {{userName}}. My Date of Birth is {{dob}}. You can connect with me at {{email}}.
+    </div>
+</div>
