@@ -1,0 +1,14 @@
+<div class="field">
+    <label>INPUT DATA: </label>
+    <input type="text" [(ngModel)]="inputData">
+    <button (click)="addValue()">ADD INPUT</button>
+</div>
+<div>
+    <div *ngIf="inputDataArray.length != 0; else showError">
+        <ng-container *ngFor="let value of inputDataArray; let i = index">
+            <p>{{i+1}} {{value.data}}</p>
+            <button (click)="deleteValue(i)">DELETE</button>
+        </ng-container>
+    </div>
+    <ng-template #showError>NO DATA AVAILABLE</ng-template>
+</div>
