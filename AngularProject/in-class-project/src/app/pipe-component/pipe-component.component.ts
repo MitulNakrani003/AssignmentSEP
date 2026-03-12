@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './pipe-component.component.scss'
 })
 export class PipeComponentComponent {
-  msg = { title: '', description: '' };
-  selectedIndex = -1
+  msg = { title: '', description: '', index: -1};
+  selectedIndex = -1;
+  titleIndex = -1;
   data = [
     {
       name: 'James',
@@ -37,7 +38,12 @@ export class PipeComponentComponent {
   ];
 
   showDescription(index:number, title: string, description: string): void {
-    this.msg = { title, description };
+    this.msg = { title, description, index };
     this.selectedIndex = index;
+    this.titleIndex = -1;
+  }
+
+  onChildEventTriggered(eventValue: number){
+    this.titleIndex = eventValue;
   }
 }

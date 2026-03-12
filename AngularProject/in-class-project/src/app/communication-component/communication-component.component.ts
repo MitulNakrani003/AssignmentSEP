@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-communication-component',
@@ -7,9 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './communication-component.component.scss'
 })
 export class CommunicationComponentComponent {
-  @Input() childdata: { title: string, description: string }  = { title: '', description: '' };
+  @Input() childdata = { index:-1, title: '', description: '' };
+
+  @Output() passIndex = new EventEmitter<number>();
 
   onSave() {
     console.log('SAVE clicked:', this.childdata);
+    this.passIndex.emit(this.childdata.index);
   }
 }

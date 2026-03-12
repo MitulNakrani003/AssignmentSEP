@@ -5,13 +5,13 @@
         </div>
         <div class="list-container" *ngFor="let d of data; let i = index">
             <div class="list-elements" [ngStyle]="{'border-left': '5px solid ' + d.color}" [ngClass]="{'active-element': selectedIndex === i}" (click)="showDescription(i, d.name,d.description)">
-                <h2>{{d.name}} </h2>
+                <h2 [ngStyle]="{'color': d.color && titleIndex === i ? d.color : 'inherit'}">{{d.name}} </h2>
                 <p>{{d.description | replaceLongStrings}}</p>
             </div>
         </div>
     </div>
 
     <div class="data-container">
-        <app-communication-component [childdata]="msg"></app-communication-component>
+        <app-communication-component [childdata]="msg" (passIndex)="onChildEventTriggered($event)"></app-communication-component>
     </div>
 </div>
