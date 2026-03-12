@@ -9,28 +9,11 @@
         <p appColorChange>
             {{task.description}}    
         </p>
-        <label for="status">Status: </label>&nbsp;
+        <label for="status">Status Options</label>&nbsp;
         <select name="status" [(ngModel)]="task.status">
             <option value="Incomplete">Incomplete</option>
             <option value="Completed">Completed</option>
             <option value="In Progress">In-Progress</option>
         </select>
-        <p>-------------------------------------------------------------------------</p>
     </div>
-</div>
-<div>
-    <h3>ADD NEW TASK</h3>
-    <div class="field">
-        <label for="title">TITLE: </label>
-        <input type="text" name="title" [(ngModel)]="newTask.title">
-    </div>
-    <div class="field">
-        <label for="description">DESCRIPTION: </label>
-        <input type="text" name="description" [(ngModel)]="newTask.description">
-    </div>
-    <div class="field">
-        <label for="dueDate">DUE DATE: </label>
-        <input type="date" name="dueDate" [(ngModel)]="newTask.dueDate">
-    </div>
-    <button (click)="addTask()">ADD TASK</button>
 </div>

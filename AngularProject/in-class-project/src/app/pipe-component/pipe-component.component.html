@@ -1,0 +1,17 @@
+<div class="main-container">
+    <div class="list-column">
+        <div class="list-heading">
+            <h1>LIST</h1>
+        </div>
+        <div class="list-container" *ngFor="let d of data; let i = index">
+            <div class="list-elements" [ngStyle]="{'border-left': '5px solid ' + d.color}" [ngClass]="{'active-element': selectedIndex === i}" (click)="showDescription(i, d.name,d.description)">
+                <h2>{{d.name}} </h2>
+                <p>{{d.description | replaceLongStrings}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-container">
+        <app-communication-component [childdata]="msg"></app-communication-component>
+    </div>
+</div>

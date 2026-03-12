@@ -1,0 +1,46 @@
+p {
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 10px
+}
+
+h2 {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.list-column {
+    width: 50vw;
+}
+
+.list-container {
+    border: 1px solid black;
+}
+
+.list-heading {
+    padding-left: 10px;
+    border: 1px solid black;
+}
+
+
+.main-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.data-container {
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+}
+
+.active-element {
+    border-left-width: 8px !important;
+    background-color: rgb(218, 213, 213);
+}

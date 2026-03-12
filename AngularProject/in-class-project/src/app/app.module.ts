@@ -9,6 +9,9 @@ import { BasicFormReactiveComponent } from './basic-form-reactive/basic-form-rea
 import { FormDirectivesComponentComponent } from './form-directives-component/form-directives-component.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ColorChangeDirective } from './color-change.directive';
+import { PipeComponentComponent } from './pipe-component/pipe-component.component';
+import { ReplaceLongStringsPipe } from './replace-long-strings.pipe';
+import { CommunicationComponentComponent } from './communication-component/communication-component.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ColorChangeDirective } from './color-change.directive';
     BasicFormReactiveComponent,
     FormDirectivesComponentComponent,
     TaskListComponent,
-    ColorChangeDirective
+    ColorChangeDirective,
+    PipeComponentComponent,
+    ReplaceLongStringsPipe,
+    CommunicationComponentComponent
   ],
   imports: [
     BrowserModule,
