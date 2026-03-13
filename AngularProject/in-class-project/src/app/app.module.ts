@@ -12,6 +12,7 @@ import { ColorChangeDirective } from './color-change.directive';
 import { PipeComponentComponent } from './pipe-component/pipe-component.component';
 import { ReplaceLongStringsPipe } from './replace-long-strings.pipe';
 import { CommunicationComponentComponent } from './communication-component/communication-component.component';
+import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommunicationComponentComponent } from './communication-component/commu
     ColorChangeDirective,
     PipeComponentComponent,
     ReplaceLongStringsPipe,
-    CommunicationComponentComponent
+    CommunicationComponentComponent,
+    FlightBookingComponent
   ],
   imports: [
     BrowserModule,
