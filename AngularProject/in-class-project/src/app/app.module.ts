@@ -13,6 +13,7 @@ import { PipeComponentComponent } from './pipe-component/pipe-component.componen
 import { ReplaceLongStringsPipe } from './replace-long-strings.pipe';
 import { CommunicationComponentComponent } from './communication-component/communication-component.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
+import { RegisterComponentComponent } from './register-component/register-component.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     PipeComponentComponent,
     ReplaceLongStringsPipe,
     CommunicationComponentComponent,
-    FlightBookingComponent
+    FlightBookingComponent,
+    RegisterComponentComponent
   ],
   imports: [
     BrowserModule,

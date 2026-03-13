@@ -1,0 +1,65 @@
+<h2 style="font-family: 'Courier New', Courier, monospace;">SIGNUP FORM</h2>
+<form [formGroup]="registerForm">
+    <div>
+        <label>Username: </label><input formControlName="name">&nbsp;
+    </div>
+    <div *ngIf="name?.hasError('required')">
+        USERNAME REQUIRED
+    </div>
+    <div *ngIf="name?.hasError('minlength')">
+        USERNAME MUST BE AT LEAST 3 CHARACTERS.
+    </div>
+
+    <div>
+        <label>Email: </label><input formControlName="email">&nbsp;
+    </div>
+    <div *ngIf="email?.hasError('required')">
+        EMAIL REQUIRED
+    </div>
+    <div *ngIf="email?.hasError('email')">
+        EMAIL FIELD HAS ERROR
+    </div>
+
+    <div>
+        <label>Password: </label><input formControlName="password">&nbsp;
+    </div>
+    <div *ngIf="password?.hasError('required')">
+        PASSWORD REQUIRED
+    </div>
+    <div *ngIf="password?.hasError('minlength')">
+        PASSWORD MUST BE 6 CHARS
+    </div>
+
+    <div>
+        <label>ConfirmPassword: </label><input formControlName="confirmpassword">&nbsp;
+    </div>
+    <div *ngIf="confirmpassword?.hasError('required')">
+        CONFORM PASSWORD REQUIRED
+    </div>
+    <div *ngIf="confirmpassword?.hasError('minlength')">
+        PASSWORD MUST BE 6 CHARS
+    </div>
+
+    <div>
+        <label>Contact Type: </label>&nbsp;
+        <select formControlName="contacttype" (change)="onSelectionChange()">
+            <option value="Phone">PHONE-NUMBER</option>
+            <option value="Email">EMAIL</option>
+        </select>
+    </div>
+
+    <div *ngIf="contacttype?.value == 'Phone'">
+        <label>PhoneNumer: </label><input type="number" formControlName="phonenumber">
+    </div>
+    <div *ngIf="phonenumber?.hasError('required')">
+        PHONE NUMBER REQUIRED
+    </div>
+
+    <div *ngIf="registerForm.hasError('customPasswordMismatch')">
+        PASSWORDS MISMATCH
+    </div>
+
+    <div>
+        <button type="button" [disabled]="registerForm.invalid" (click)="saveValues()">SAVE</button>
+    </div>
+</form>
