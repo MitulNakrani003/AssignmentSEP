@@ -30,7 +30,10 @@ export class SubjectServiceService {
     if (!exists) {
       this.currentFavourites.push(u);
       this.favouriteSubject.next(this.currentFavourites);
+    } else {
+      this.removeFromFav(u);
     }
+
   }
 
   removeFromFav(u: user) {
