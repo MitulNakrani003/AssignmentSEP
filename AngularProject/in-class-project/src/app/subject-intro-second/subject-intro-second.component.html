@@ -1,0 +1,20 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>REMOVE AS FAV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usr of favUsers">
+                <td>{{usr.id}}</td>
+                <td>{{usr.name}}</td>
+                <td>{{usr.email}}</td>
+                <td><button (click)="removefav(usr)">REMOVE</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

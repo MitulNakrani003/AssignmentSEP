@@ -1,0 +1,21 @@
+<div>
+    <label>Search Bar: </label><input type="text" #searchbar placeholder="Search Names">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ADD TO FAV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td><button (click)="addToFavs(u)">ADD TO FAV</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

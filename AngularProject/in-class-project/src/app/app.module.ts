@@ -17,6 +17,8 @@ import { RegisterComponentComponent } from './register-component/register-compon
 import { HttpIntroComponent } from './http-intro/http-intro.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductComponentComponent } from './product-component/product-component.component';
+import { SubjectIntroComponent } from './subject-intro/subject-intro.component';
+import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intro-second.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ProductComponentComponent } from './product-component/product-component
     FlightBookingComponent,
     RegisterComponentComponent,
     HttpIntroComponent,
-    ProductComponentComponent
+    ProductComponentComponent,
+    SubjectIntroComponent,
+    SubjectIntroSecondComponent
   ],
   imports: [
     BrowserModule,
