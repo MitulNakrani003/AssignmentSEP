@@ -14,6 +14,9 @@ import { ReplaceLongStringsPipe } from './replace-long-strings.pipe';
 import { CommunicationComponentComponent } from './communication-component/communication-component.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { RegisterComponentComponent } from './register-component/register-component.component';
+import { HttpIntroComponent } from './http-intro/http-intro.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductComponentComponent } from './product-component/product-component.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +30,16 @@ import { RegisterComponentComponent } from './register-component/register-compon
     ReplaceLongStringsPipe,
     CommunicationComponentComponent,
     FlightBookingComponent,
-    RegisterComponentComponent
+    RegisterComponentComponent,
+    HttpIntroComponent,
+    ProductComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

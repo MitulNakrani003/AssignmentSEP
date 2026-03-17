@@ -1,0 +1,35 @@
+<div>
+    <h1>PRODUCTS LIST</h1>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>TITLE</td>
+                <td>DESCRIPTION</td>
+                <td>PRICE</td>
+                <td>CATEGORY</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of allProducts">
+                <td>{{p.title}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.category}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="errorMessage.length != 0">
+    <p>{{ errorMessage }}</p>
+</div>
+<div>
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+        <input type="text" formControlName="title" placeholder="Title">&nbsp;
+        <input type="text" formControlName="description" placeholder="Description">&nbsp;
+        <input type="number" formControlName="price" placeholder="Price">&nbsp;
+        <input type="text" formControlName="category" placeholder="Category">&nbsp;
+        <button type="submit">Add Product</button>
+    </form>
+</div>
