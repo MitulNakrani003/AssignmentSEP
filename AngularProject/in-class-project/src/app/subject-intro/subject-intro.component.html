@@ -14,7 +14,7 @@
                 <td>{{u.id}}</td>
                 <td>{{u.name}}</td>
                 <td>{{u.email}}</td>
-                <td><button (click)="addToFavs(u)">ADD TO FAV</button></td>
+                <td><button (click)="addToFavs(u)">{{ isInFav(u) ? 'REMOVE' : 'ADD TO FAV' }}</button></td>
             </tr>
         </tbody>
     </table>

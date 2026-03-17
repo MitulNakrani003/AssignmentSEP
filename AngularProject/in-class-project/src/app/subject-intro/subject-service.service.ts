@@ -26,20 +26,22 @@ export class SubjectServiceService {
 
   addToFav(u: user) {
     const exists = this.currentFavourites.some((item) => item.id === u.id);
-
     if (!exists) {
       this.currentFavourites.push(u);
       this.favouriteSubject.next(this.currentFavourites);
     } else {
       this.removeFromFav(u);
     }
-
   }
 
   removeFromFav(u: user) {
     const newFav = this.currentFavourites.filter((item) => item.id !== u.id)
     this.favouriteSubject.next(newFav)
     this.currentFavourites = newFav;
+  }
+
+  checkExistsInFav(u: user): boolean {
+    return this.currentFavourites.some((item) => item.id === u.id);
   }
 
 }

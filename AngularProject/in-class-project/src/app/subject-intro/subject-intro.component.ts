@@ -8,9 +8,9 @@ import { debounceTime, fromEvent, map } from 'rxjs';
   templateUrl: './subject-intro.component.html',
   styleUrl: './subject-intro.component.scss'
 })
-export class SubjectIntroComponent implements OnInit, AfterViewInit{
+export class SubjectIntroComponent implements OnInit, AfterViewInit {
 
-  constructor(private subjectservice: SubjectServiceService){}
+  constructor(private subjectservice: SubjectServiceService) { }
 
   @ViewChild('searchbar') searchbar!: ElementRef;
 
@@ -23,18 +23,18 @@ export class SubjectIntroComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(): void {
     fromEvent(this.searchbar.nativeElement, 'keyup')
-    .pipe(
-      debounceTime(1000),
-      map(() => this.searchbar.nativeElement.value.trim().toLowerCase()),
-    )
-    .subscribe((name) => {
-      if(name) {
-        this.users = this.allUsers.filter((u) => u.name.toLowerCase().includes(name))
-      }
-      else{
-        this.users = this.allUsers;
-      }
-    });
+      .pipe(
+        debounceTime(1000),
+        map(() => this.searchbar.nativeElement.value.trim().toLowerCase()),
+      )
+      .subscribe((name) => {
+        if (name) {
+          this.users = this.allUsers.filter((u) => u.name.toLowerCase().includes(name))
+        }
+        else {
+          this.users = this.allUsers;
+        }
+      });
   }
 
   fetchUsersData() {
@@ -45,8 +45,12 @@ export class SubjectIntroComponent implements OnInit, AfterViewInit{
     });
   }
 
-  addToFavs(u : user) {
+  addToFavs(u: user) {
     this.subjectservice.addToFav(u);
+  }
+
+  isInFav(u: user): boolean {
+    return this.subjectservice.checkExistsInFav(u);
   }
 
 }
