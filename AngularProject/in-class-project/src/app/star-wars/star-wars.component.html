@@ -1,0 +1,23 @@
+<form>
+<div>
+    <label>Search Character: </label>
+    <input [formControl]="searchCharacter" placeholder="Enter Char Name">
+</div>  
+<table>
+    <thead>
+        <tr>
+            <th>Movies</th>
+            <th>Release Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of moviesList">
+            <td>{{movie.title}}</td>
+            <td>{{movie.release_date | date:'yyyy'}}</td>
+        </tr>
+    </tbody>
+</table>  
+<div>
+    <button (click)="onSubmit()">SEARCH</button>
+</div>
+</form>

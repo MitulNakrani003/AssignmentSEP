@@ -19,6 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductComponentComponent } from './product-component/product-component.component';
 import { SubjectIntroComponent } from './subject-intro/subject-intro.component';
 import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intro-second.component';
+import { StarWarsComponent } from './star-wars/star-wars.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intr
     HttpIntroComponent,
     ProductComponentComponent,
     SubjectIntroComponent,
-    SubjectIntroSecondComponent
+    SubjectIntroSecondComponent,
+    StarWarsComponent
   ],
   imports: [
     BrowserModule,
