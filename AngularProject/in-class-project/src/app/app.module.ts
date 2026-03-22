@@ -20,6 +20,8 @@ import { ProductComponentComponent } from './product-component/product-component
 import { SubjectIntroComponent } from './subject-intro/subject-intro.component';
 import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intro-second.component';
 import { StarWarsComponent } from './star-wars/star-wars.component';
+import { TabComponentComponent } from './tab-component/tab-component.component';
+import { TabGroupComponentComponent } from './tab-group-component/tab-group-component.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { StarWarsComponent } from './star-wars/star-wars.component';
     ProductComponentComponent,
     SubjectIntroComponent,
     SubjectIntroSecondComponent,
-    StarWarsComponent
+    StarWarsComponent,
+    TabComponentComponent,
+    TabGroupComponentComponent
   ],
   imports: [
     BrowserModule,
