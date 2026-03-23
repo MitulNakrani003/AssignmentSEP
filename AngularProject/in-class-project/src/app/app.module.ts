@@ -22,6 +22,7 @@ import { SubjectIntroSecondComponent } from './subject-intro-second/subject-intr
 import { StarWarsComponent } from './star-wars/star-wars.component';
 import { TabComponentComponent } from './tab-component/tab-component.component';
 import { TabGroupComponentComponent } from './tab-group-component/tab-group-component.component';
+import { JobBoardComponent } from './job-board/job-board.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TabGroupComponentComponent } from './tab-group-component/tab-group-comp
     SubjectIntroSecondComponent,
     StarWarsComponent,
     TabComponentComponent,
-    TabGroupComponentComponent
+    TabGroupComponentComponent,
+    JobBoardComponent
   ],
   imports: [
     BrowserModule,
